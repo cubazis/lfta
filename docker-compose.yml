@@ -1,0 +1,43 @@
+version: '2'
+services:
+
+#  server:
+#    build: .
+#    ports:
+#     - "8000:8000"
+#    volumes:
+#     - .:/server
+
+  client:
+    build:
+      context: ./web
+    ports:
+     - "3000:3000"
+    volumes:
+     - ./web:/client
+
+  messaging:
+    image: landoop/fast-data-dev
+    ports:
+      - "2181:2181"
+      - "3030:3030"
+      - "8081:8081"
+      - "8082:8082"
+      - "8083:8083"
+      - "9092:9092"
+    expose:
+      - "9092"
+      - "2181"
+      - "3030"
+    environment:
+      ADV_HOST: 127.0.0.1
+
+  cassandra:
+    #image: 'library/cassandra:latest'
+    build:
+      context: ./db
+    ports:
+      - '7000:7000'
+      - '7001:7001'
+      - '9042:9042'
+      - '9160:9160'

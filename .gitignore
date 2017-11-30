@@ -1,0 +1,39 @@
+### SBT ###
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+.history
+.cache
+.lib/
+
+### Scala ###
+*.class
+*.log
+
+### Idea ###
+*.iml
+*.ipr
+*.iws
+.idea
+out
+
+tags
+.*.swp
+.*.swo
+
+### Other ####
+.DS_Store
+web/node_modules/*
+web/package-lock.json
+web/static/*
+uploads/*
+web/*.log
+web/dist
+web/coverage
+.yarn-cache
+
+
+# twitter csv file
